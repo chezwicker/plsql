@@ -25,7 +25,7 @@
 			<key>begin</key>
 			<string>^\s*--\+-*\s*$</string>
 			<key>end</key>
-			<string>^\s*((?=^-^-)|--\+-*\s*$)</string>
+			<string>(^(?!\s*\-\-)|(^\s*--\+-*\s*$))</string>
 			<key>name</key>
 			<string>comment.block.documentation.plsql</string>
 			<key>patterns</key>
@@ -91,7 +91,7 @@
 			<key>match</key>
 			<string>(?ix)
 			         \b(select|insert|update|delete)\b
-			         \b(lag|lead|rank)\b
+			  |      \b(lag|lead|rank)\b
 			  |      \b(into|from|join|set|values|where)\b
 			  |      \b(unique|distinct|all|\*)\b
 			  |      \b(and|or|not)\b
