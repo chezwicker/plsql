@@ -80,9 +80,9 @@
 			<string>(?ix)
 			         \b((end\s+)?if|then|else|elsif|(end\s+)?case)\b
 			  |      \b(for|while|loop)\b
-				|      \b(return|raise)\b
-				|      \b(begin|end|exception)\b
-				|      \b(exit|continue|when)\b
+			  |      \b(return|raise)\b
+			  |      \b(begin|end|exception)\b
+			  |      \b(exit|continue|when)\b
 			</string>
 			<key>name</key>
 			<string>keyword.control.plsql</string>
@@ -92,14 +92,14 @@
 			<string>(?ix)
 			         \b(select|insert|update|delete)\b
 			         \b(lag|lead|rank)\b
-				|      \b(into|from|join|set|values|where)\b
-				|      \b(unique|distinct|all|\*)\b
+			  |      \b(into|from|join|set|values|where)\b
+			  |      \b(unique|distinct|all|\*)\b
 			  |      \b(and|or|not)\b
 			  |      \b(between|like|not)\b
-				|      \b(in|exists)\b
-				|      \b(minus|intersect|union)\b
-				|      \b(order|group|by|having)\b
-				|      \b(asc|desc)\b
+			  |      \b(in|exists)\b
+			  |      \b(minus|intersect|union)\b
+			  |      \b(order|group|by|having)\b
+			  |      \b(asc|desc)\b
 			</string>
 			<key>name</key>
 			<string>keyword.other.sql.plsql</string>
