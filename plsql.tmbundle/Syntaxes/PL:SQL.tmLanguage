@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>plsql</string>
+		<string>pkg</string>
+		<string>pkb</string>
+		<string>pkh</string>
+	</array>
+	<key>name</key>
+	<string>PL/SQL</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>begin</key>
+			<string>/\*</string>
+			<key>end</key>
+			<string>\*/</string>
+			<key>name</key>
+			<string>comment.block.plsql</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^\s*--\+-*\s*$</string>
+			<key>end</key>
+			<string>^\s*((?=^-^-)|--\+-*\s*$)</string>
+			<key>name</key>
+			<string>comment.block.documentation.plsql</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>--.*</string>
+					<key>name</key>
+					<string>comment.block.documentation.plsql</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>--.*</string>
+			<key>name</key>
+			<string>comment.line.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?i)\b(replace|create\s+(or\s+replace)?)\b</string>
+			<key>name</key>
+			<string>support.function.declaration.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?ix)
+			         \b(avg|count|min|max|sum)\b
+			  |      \b(lpad|rpad|ltrim|trim|rtrim|trunc)\b
+			  |      \b(lower|translate|upper)\b
+			  |      \b(coalesce|nullif|nvl)\b
+			  |      \b(abs|ceil|floor|log|mod|sign|sqrt|power)\b
+			  |      \b(instr|substr)\b
+			  |      \b(to_char|to_clob|to_date|to_number|to_timestamp)\b</string>
+			<key>name</key>
+			<string>support.function.builtin.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?i)\b(package\s+(body)?)\b</string>
+			<key>name</key>
+			<string>entity.name.type.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?i)\b(function|procedure)\b</string>
+			<key>name</key>
+			<string>entity.name.function.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?ix)
+			         \b((end\s+)?if|then|else|elsif|(end\s+)?case)\b
+			  |      \b(for|while|loop)\b
+				|      \b(return|raise)\b
+				|      \b(begin|end|exception)\b
+				|      \b(exit|continue|when)\b
+			</string>
+			<key>name</key>
+			<string>keyword.control.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?ix)
+			         \b(select|insert|update|delete)\b
+			         \b(lag|lead|rank)\b
+				|      \b(into|from|join|set|values|where)\b
+				|      \b(unique|distinct|all|\*)\b
+			  |      \b(and|or|not)\b
+			  |      \b(between|like|not)\b
+				|      \b(in|exists)\b
+				|      \b(minus|intersect|union)\b
+				|      \b(order|group|by|having)\b
+				|      \b(asc|desc)\b
+			</string>
+			<key>name</key>
+			<string>keyword.other.sql.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?i)\b(null|true|false)\b</string>
+			<key>name</key>
+			<string>constant.language.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?i)\b((i\_|o\_|x\_)\w+)\b</string>
+			<key>name</key>
+			<string>variable.parameter.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?i)\b((c\_|l\_|b\_|g\_)\w+)\b</string>
+			<key>name</key>
+			<string>variable.other.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?ix)
+			         \b(boolean|date|pls_integer)\b
+			  |      \b(char|number|varchar\d?)\b(?:\((\d+)\))?
+			</string>
+			<key>name</key>
+			<string>storage.type.builtin.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(')[^'\\]*(')</string>
+			<key>name</key>
+			<string>string.quoted.single</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(")[^"\\]*(")</string>
+			<key>name</key>
+			<string>string.quoted.double</string>
+		</dict>
+	</array>
+	<key>repository</key>
+	<dict/>
+	<key>scopeName</key>
+	<string>source.plsql</string>
+	<key>uuid</key>
+	<string>C85B1105-CFDE-41D8-A4C9-02F50A8F269E</string>
+</dict>
+</plist>
