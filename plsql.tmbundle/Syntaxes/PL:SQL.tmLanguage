@@ -42,7 +42,7 @@
 			<key>match</key>
 			<string>--.*</string>
 			<key>name</key>
-			<string>comment.line.plsql</string>
+			<string>comment.line.double-dash.plsql</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -53,12 +53,12 @@
 		<dict>
 			<key>match</key>
 			<string>(?ix)
-			         \b(avg|count|min|max|sum)\b
-			  |      \b(lpad|rpad|ltrim|trim|rtrim|trunc)\b
+			         \b(avg|(regexp_)?count|min|max|sum)\b
+			  |      \b(length|lpad|rpad|ltrim|trim|rtrim|trunc)\b
 			  |      \b(lower|translate|upper)\b
 			  |      \b(coalesce|nullif|nvl)\b
 			  |      \b(abs|ceil|floor|log|mod|sign|sqrt|power)\b
-			  |      \b(instr|substr)\b
+			  |      \b((regexp_)?instr|(regexp_)?substr)\b
 			  |      \b(to_char|to_clob|to_date|to_number|to_timestamp)\b</string>
 			<key>name</key>
 			<string>support.function.builtin.plsql</string>
@@ -89,6 +89,47 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>(=|!=|&lt;=|&gt;=|&lt;&gt;|&lt;|&gt;)</string>
+			<key>name</key>
+			<string>keyword.operator.comparison.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(:=)</string>
+			<key>name</key>
+			<string>keyword.operator.assignment.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(\-|\+|\*|\/)</string>
+			<key>name</key>
+			<string>keyword.operator.arithmetic.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(!|and|or)</string>
+			<key>name</key>
+			<string>keyword.operator.logical.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>;</string>
+			<key>name</key>
+			<string>punctuation.terminator.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?ix)
+			         \b(constant|pragma)\b
+			  |      \b(in|nocopy|out)\b
+			  |      \b(%found|%rowcount|%type)\b
+			  |      \b(sqlerrm|sqlcode)\b
+			</string>
+			<key>name</key>
+			<string>keyword.other.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>(?ix)
 			         \b(select|insert|update|delete)\b
 			  |      \b(lag|lead|rank)\b
@@ -112,6 +153,14 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>(?x)	
+			         \.\d+\b
+			  |      \b\d+(\.\d+)?(e(\+|-)?\d+)?\b</string>
+			<key>name</key>
+			<string>constant.numeric.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>(?i)\b((i\_|o\_|x\_)\w+)\b</string>
 			<key>name</key>
 			<string>variable.parameter.plsql</string>
@@ -125,8 +174,11 @@
 		<dict>
 			<key>match</key>
 			<string>(?ix)
-			         \b(boolean|date|pls_integer)\b
-			  |      \b(char|number|varchar\d?)\b(?:\((\d+)\))?
+			         \b(boolean)\b
+			         \b(date|timestamp (with (local)? time zone)?)\b
+			  |      \b((b)?char|number|(n)?varchar\d?)\b(?:\((\d+)\))?
+			  |      \b((pls_|binary_)?integer|long|raw|rowid)\b
+			  |      \b(blob|(n)?clob|lob)\b
 			</string>
 			<key>name</key>
 			<string>storage.type.builtin.plsql</string>
@@ -135,13 +187,19 @@
 			<key>match</key>
 			<string>(')[^'\\]*(')</string>
 			<key>name</key>
-			<string>string.quoted.single</string>
+			<string>string.quoted.single.plsql</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>(")[^"\\]*(")</string>
 			<key>name</key>
-			<string>string.quoted.double</string>
+			<string>string.quoted.double.plsql</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b($ELSE|$ELSIF|$IF|$ERROR|$THEN)\b</string>
+			<key>name</key>
+			<string>support.other.plsql</string>
 		</dict>
 	</array>
 	<key>repository</key>
